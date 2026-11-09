@@ -434,6 +434,12 @@ body.menu-open .header__inner {
   --shot-solid-bg: #c9a24b; --shot-solid-fg: #101b2c; --shot-outline: #2b3a52;
   --shot-head: Georgia, "Times New Roman", serif; --shot-body: var(--sans);
 }
+.shot--bolonha {
+  --shot-bg: #141518; --shot-fg: #f7f7f4; --shot-bar: #000000; --shot-line: #2c2e33; --shot-dot: #2c2e33;
+  --shot-url: #141518; --shot-muted: #a19d93; --shot-accent: #e9b526; --shot-soft: #c9c6bd;
+  --shot-solid-bg: #e9b526; --shot-solid-fg: #141518; --shot-outline: #55524a;
+  --shot-head: "Arial Narrow", "Roboto Condensed", var(--sans); --shot-body: var(--sans);
+}
 
 .shot__bar {
   display: flex; align-items: center; gap: 1.6cqw;
@@ -476,6 +482,17 @@ body.menu-open .header__inner {
   border: 1px solid var(--shot-accent); border-radius: 2px; opacity: .6;
 }
 .shot--navy .m-title, .shot--navy .m-text, .shot--navy .m-btns, .shot--navy .m-kicker { position: relative; z-index: 1; }
+
+/* Bolonha: título em caixa alta itálica, como o letreiro, e a faixa dourada a 12° */
+.shot--bolonha .m-nav b { color: var(--shot-accent); font-style: italic; text-transform: uppercase; letter-spacing: -.01em; }
+.shot--bolonha .m-title { font-style: italic; font-weight: 700; text-transform: uppercase; letter-spacing: -.01em; line-height: .95; max-width: 13ch; font-size: max(20px, 6.2cqw); }
+.shot--bolonha .shot__page { position: relative; overflow: hidden; }
+.shot--bolonha .shot__page::after {
+  content: ""; position: absolute; top: 0; bottom: 0; right: 12cqw; width: 1.4cqw;
+  background: var(--shot-accent); transform: skewX(-12deg); opacity: .9;
+}
+.shot--bolonha .m-nav, .shot--bolonha .m-kicker, .shot--bolonha .m-title, .shot--bolonha .m-text, .shot--bolonha .m-btns { position: relative; z-index: 1; }
+.shot--bolonha .m-text { max-width: 40ch; }
 
 /* ---------- Serviços ---------- */
 .services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px); }
